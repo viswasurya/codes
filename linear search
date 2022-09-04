@@ -1,0 +1,16 @@
+asus = [1,2,3,4,5,6]
+n = 4
+pos = -1
+def search(asus,n):
+    i = 0
+    while(i < len(asus)):
+       if asus[i] == n :
+           globals()['pos'] = i
+           return True
+       i = i+1 
+    return False
+    
+if search(asus,n):
+    print(f"element is found at {pos+1}")
+else:
+    print("element i not found")
