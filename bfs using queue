@@ -1,0 +1,27 @@
+import collections
+def bfs(graph,root):
+    visited = set()
+    queue = collections.deque([root])
+    while queue:
+        vertex = queue.popleft()
+        visited.add(vertex)
+        for i in graph[vertex]:
+            if i not in visited:
+                queue.append(i)
+                
+    print(visited)
+    
+graph = {
+    0 : [1,2,3],
+    1:[0,2],
+    2:[0,1],
+    3:[0],
+    4:[2]
+}
+
+bfs(graph,0)
+
+
+""" collections is used to create an empty queue ,
+    put the first element in the queue and then pop it, catch that popped element and keep it in visited set.
+    now traverse through adjacent nodes of that  popped element and add them into queue(if they are nt in visited set"""
